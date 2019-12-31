@@ -15,15 +15,14 @@ conflicts=()
 
 pkgver() {
   cd "search-in-dir"
-
   git describe --tags | sed 's/-/.r/; s/-g/./'
 }
-
 build () {
   cd "search-in-dir"
   rm -f README.md
   rm -f PKGBUILD
   rm -rf .git
+  chmod 755 ./usr/bin/sid
 }
 package() {
     mkdir -p "$pkgdir"
