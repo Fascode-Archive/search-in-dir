@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+if [[ ! -d $1 || -z $1 ]]; then
+    echo "ディレクトリを指定してください。"
+    exit 1
+fi
+
+if [[ -z $2 ]]; then
+    echo "検索する語句がありません。"
+    exit 1
+fi
+
+dir=$1
+word=$2
+dir_list=( $(find ${dir} -type f 2> /dev/null | perl -nle 'print if -f && -T') )
+
+for file in ${dir_list[@]}; do
+    if [[ -n $(cat $file 2> /dev/null | grep $word) ]]; then
+        echo $file
+    fi
+done
