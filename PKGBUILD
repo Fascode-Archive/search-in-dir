@@ -24,6 +24,7 @@ build () {
   rm -rf .git
   chmod 755 ./usr/bin/sid
   mv * ..
+  rm -rf ./search-in-dir
 }
 package() {
     mkdir -p "$pkgdir"
