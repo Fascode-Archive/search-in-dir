@@ -1,4 +1,4 @@
-# Maintainer: Kevin Del Castillo R. <lans9831@gmail.com>
+# Maintainer: Yamada Hayao <shun819.mail@gmail.com>
 
 pkgname=search-in-dir-git
 pkgver=1.0
@@ -23,6 +23,7 @@ build () {
   rm -f PKGBUILD
   rm -rf .git
   chmod 755 ./usr/bin/sid
+  mv * ..
 }
 package() {
     mkdir -p "$pkgdir"
