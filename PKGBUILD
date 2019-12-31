@@ -1,7 +1,7 @@
 # Maintainer: Kevin Del Castillo R. <lans9831@gmail.com>
 
 pkgname=search-in-dir-git
-pkgver=1.1
+pkgver=1.0
 pkgrel=1
 pkgdesc="ディレクトリの中のテキストファイルを検索します。"
 arch=('any')
